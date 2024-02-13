@@ -16,4 +16,22 @@ function generateSongText(bottles) {
   }
   
   // Пример использования функции
-  console.log(generateSongText(10))
+  console.log(generateSongText(10));
+
+
+
+  function generateSongText(numBottles) {
+    let songText = '';
+    
+    for (let i = numBottles; i > 0; i--) {
+        let bottlesWord = i === 1 ? 'Бутылка' : i === 2 ? 'Бутылки':'Бутылок';
+        let beerWord = i === 1 ? 'Пива' : 'Пиво'
+
+
+        songText += `${i} ${bottlesWord} ${beerWord} на стене, ${i} ${bottlesWord} ${beerWord}!\n`;
+    songText += `Возьми одну, пусти по кругу, ${i - 1} ${i - 1 === 1 ? "бутылка" : "бутылки"} ${beerWord} на стене!\n\n`;
+    }
+    return songText;
+  }
+  
+
